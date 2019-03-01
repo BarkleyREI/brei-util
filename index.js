@@ -11,7 +11,8 @@ const ignored = [
 	'.gitkeep',
 	'.idea',
 	'node_modules',
-	'.DS_Store'
+	'.DS_Store',
+	'package-lock.json'
 ];
 
 const util = module.exports = {
@@ -30,7 +31,9 @@ const util = module.exports = {
 		if (stats.isDirectory()) {
 			if (_.indexOf(ignored, info.name) === -1) {
 				info.children = fs.readdirSync(filename).map(function (child) {
-					return util.tree(filename + '/' + child);
+					if (_.indexOf(ignored, child) === -1) {
+						return util.tree(filename + '/' + child);
+					}
 				});
 			}
 		}
@@ -47,17 +50,21 @@ const util = module.exports = {
 
 			dirtree.children.forEach(function (item) {
 
-				if (typeof item.children !== 'undefined') {
+				if (typeof item !== 'undefined') {
 
-					tmp[item.name] = util.ftree(item);
+					if (typeof item.children !== 'undefined') {
 
-					formatted.push(Object.assign({}, tmp));
+						tmp[item.name] = util.ftree(item);
 
-					tmp = [];
+						formatted.push(Object.assign({}, tmp));
 
-				} else {
+						tmp = [];
 
-					formatted.push(item.name);
+					} else {
+
+						formatted.push(item.name);
+
+					}
 
 				}
 
