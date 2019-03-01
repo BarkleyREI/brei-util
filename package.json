@@ -1,0 +1,25 @@
+{
+	"name": "brei-util",
+	"version": "1.0.0",
+	"description": "Utility functions for generator repos.",
+	"main": "index.js",
+	"scripts": {
+		"test": "exit 0"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/BarkleyREI/brei-util.git"
+	},
+	"author": "Ian Moffitt",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/BarkleyREI/brei-util/issues"
+	},
+	"homepage": "https://github.com/BarkleyREI/brei-util#readme",
+	"dependencies": {
+		"deep-equal": "1.0.1",
+		"fs": "0.0.1-security",
+		"lodash": "4.17.11",
+		"yeoman-assert": "3.1.1"
+	}
+}
