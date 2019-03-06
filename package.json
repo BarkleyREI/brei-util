@@ -1,6 +1,6 @@
 {
 	"name": "brei-util",
-	"version": "1.0.3",
+	"version": "1.0.2",
 	"description": "Utility functions for generator repos.",
 	"main": "index.js",
 	"scripts": {
