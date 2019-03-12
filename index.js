@@ -5,6 +5,7 @@ const path = require('path');
 const assert = require('yeoman-assert');
 const _ = require('lodash');
 const deep = require('deep-equal');
+const deepdiff = require('deep-object-diff');
 
 const ignored = [
 	'.git',
@@ -101,6 +102,17 @@ const util = module.exports = {
 
 	},
 
-	files: dir => fs.readdirSync(dir)
+	files: dir => fs.readdirSync(dir),
+
+	deepNotOnly: (obj1, obj2) => {
+
+		// Checks if object 2 contains all the items in object 1.
+		// It does this by doing an added Diff.
+		// Essentially, it checks to see if any items have been added in object 1.
+		// If every item matches, the result is an empty object.
+
+		return deepdiff.addedDiff(obj2, obj1);
+
+	}
 
 };
