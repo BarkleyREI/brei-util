@@ -10,7 +10,6 @@ const deepdiff = require('deep-object-diff');
 const ignored = [
 	'.git',
 	'.gitkeep',
-	'.gitignore',
 	'.idea',
 	'node_modules',
 	'.DS_Store',
