@@ -20,21 +20,23 @@ let valid = [
 	}
 ];
 
-describe('Verify file and folder structure', function () {
+describe('brei-util -- Verify file and folder structure', function () {
 
 	it('Deep object comparison check', function () {
 
 		let ttree = util.tree(root);
 
-		let files = util.ftree(ttree);
+		let actual = util.ftree(ttree);
 
-		console.log('\n------- files --------\n');
-		console.log(u.inspect(files, false, null));
+		let expected = util.filterObject(valid);
 
-		console.log('\n------- valid --------\n');
-		console.log(u.inspect(valid, false, null));
+		console.log('\n------- actual --------\n');
+		console.log(u.inspect(actual, false, null));
 
-		util.assert(util.deep(valid, files));
+		console.log('\n------- expected --------\n');
+		console.log(u.inspect(expected, false, null));
+
+		util.assert(util.deep(expected, actual));
 
 	});
 

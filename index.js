@@ -10,6 +10,7 @@ const deepdiff = require('deep-object-diff');
 const ignored = [
 	'.git',
 	'.gitkeep',
+	'.gitignore',
 	'.idea',
 	'node_modules',
 	'.DS_Store',
@@ -111,6 +112,53 @@ const util = module.exports = {
 		// If every item matches, the result is an empty object.
 
 		return deepdiff.addedDiff(obj2, obj1);
+
+	},
+
+	filterObject: (obj) => {
+
+		var index;
+		for (var prop in obj) {
+			// important check that this is objects own property
+			// not from prototype prop inherited
+			if (obj.hasOwnProperty(prop)) {
+				switch (typeof (obj[prop])) {
+					case 'string':
+						index = ignored.indexOf(obj[prop]);
+						console.log('comparing ' + obj[prop] + '; index: ' + index);
+
+						if (index > -1) {
+							delete obj[prop];
+						}
+						break;
+					case 'object':
+						let keys = Object.keys(obj[prop]);
+
+						let diff = _.difference(keys, ignored);
+
+						if (diff.length === 0) {
+							delete obj[prop];
+						} else {
+							util.filterObject(obj[prop], ignored);
+						}
+						break;
+					default:
+						break;
+				}
+			}
+		}
+
+		return util.clean(obj);
+
+	},
+
+	clean: (obj) => {
+
+		if (typeof obj.filter !== 'undefined') {
+			return obj.filter(e => e);
+		}
+
+		return obj;
 
 	}
 
