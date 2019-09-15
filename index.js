@@ -14,7 +14,8 @@ const ignored = [
 	'.idea',
 	'node_modules',
 	'.DS_Store',
-	'package-lock.json'
+	'package-lock.json',
+	'.stylelintcache'
 ];
 
 const util = module.exports = {
