@@ -20,7 +20,7 @@
 		"deep-equal": "1.0.1",
 		"deep-object-diff": "^1.1.0",
 		"fs": "0.0.1-security",
-		"lodash": "4.17.11",
+		"lodash": "4.17.15",
 		"yeoman-assert": "3.1.1"
 	},
 	"devDependencies": {
