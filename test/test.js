@@ -2,7 +2,7 @@
 
 'use strict';
 
-const util = require('brei-util');
+const util = require('../index.js');
 
 describe('brei-util -- Test (test/test.js)', function () {
 	it('Empty test', function () {
