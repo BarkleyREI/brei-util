@@ -1,29 +1,33 @@
 {
-	"name": "brei-util",
-	"version": "1.0.7",
-	"description": "Utility functions for generator repos.",
-	"main": "index.js",
-	"scripts": {
-		"test": "mocha"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/BarkleyREI/brei-util.git"
-	},
-	"author": "Ian Moffitt",
-	"license": "ISC",
-	"bugs": {
-		"url": "https://github.com/BarkleyREI/brei-util/issues"
-	},
-	"homepage": "https://github.com/BarkleyREI/brei-util#readme",
-	"dependencies": {
-		"deep-equal": "~1.1.1",
-		"deep-object-diff": "~1.1.0",
-		"fs": "0.0.2",
-		"lodash": "~4.17.15",
-		"yeoman-assert": "~3.1.1"
-	},
-	"devDependencies": {
-		"mocha": "~6.2.2"
-	}
+  "name": "brei-util",
+  "version": "1.0.7",
+  "description": "Utility functions for generator repos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BarkleyREI/brei-util.git"
+  },
+  "author": "Ian Moffitt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BarkleyREI/brei-util/issues"
+  },
+  "homepage": "https://github.com/BarkleyREI/brei-util#readme",
+  "dependencies": {
+    "deep-equal": "~1.1.1",
+    "deep-object-diff": "~1.1.0",
+    "fs": "0.0.2",
+    "lodash": "~4.17.15",
+    "yeoman-assert": "~3.1.1",
+    "snyk": "^1.316.1"
+  },
+  "devDependencies": {
+    "mocha": "~6.2.2"
+  },
+  "snyk": true
 }
