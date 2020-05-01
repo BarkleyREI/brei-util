@@ -6,9 +6,3 @@ node_js:
   - '13'
   - 'lts/*'
   - 'node'
-install:
-  - npm ci
-# keep the npm cache around to speed up installs
-cache:
-  directories:
-    - "$HOME/.npm"
