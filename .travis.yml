@@ -1,6 +1,14 @@
 language: node_js
 node_js:
-  - '9'
   - '10'
   - '11'
+  - '12'
+  - '13'
   - 'lts/*'
+  - 'node'
+install:
+  - npm ci
+# keep the npm cache around to speed up installs
+cache:
+  directories:
+    - "$HOME/.npm"
