@@ -1,8 +1,17 @@
 language: node_js
 node_js:
-  - '10'
-  - '11'
-  - '12'
-  - '13'
-  - 'lts/*'
-  - 'node'
+- '10'
+- '11'
+- '12'
+- '13'
+- lts/*
+- node
+deploy:
+  provider: npm
+  email: nessthehero@gmail.com
+  api_key:
+    secure: ymlN88WML9IoRf4wel4l3dY6E9IGhzO51LnxGqMU5f3JjM9MAPSprxRqXcRXDTcmMd2QqfO34DwP9jwtgl2kpcZM7BQxzeeU7MT1UbJ2s4ztcXa552vUZWcWJ174rfLpoPFRm6vkoUQl4bzNwsYTRwvMvCIpj9quZx/DtuK6XppUNLJcUa5Ug9UdiyVyHGDq6AauwEw7ql1UsAaN4EroC+P2XcJFPpwgx3W48fB7QRj1snWLSKoxNWqGqU8s7QF4Jp0XUYvqtVGX5ex3PpFR03AtwVaAu6S69RDpY9G1rvD37D8U4Gx2ZloPjJvRmaN6nbidXnsb5VDANQdnElO2brnkek+adgZa8jxzaQ4wAYOC4eRGm22l7Rsk/+7GH1QnhEs6KiC0/nfsXzh3n/SbpXmm8kg16NBwRu+2D70F9pFAyBsinWLF9oXLFUuwUZRSmhXSM0BK1BOFj+siLK2OBE4uitrJtCUtaWfNA7LJliw2GAG4EMtZQH1KSO2Fi9mz7k1E7XU6CCerspAfmYnw94C/8gdpEGF40MxatItptcLTbsc39URLtImLh1fLgBjspLHZug5YnHWrng+J0Cs8q30MybYMjEMLpaeojdeg1dgw/fM0DUs1fOggAtteCw+ZlWPDEgVjSGQElBfaD8N1du+JMlz5v9+ql7zQyNTcS+8=
+  on:
+    tags: true
+    repo: BarkleyREI/brei-util
+  skip_cleanup: 'true'
