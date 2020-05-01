@@ -4,7 +4,7 @@
   "description": "Utility functions for generator repos.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha",
+    "test": "snyk test && mocha",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
@@ -23,8 +23,8 @@
     "deep-object-diff": "~1.1.0",
     "fs": "0.0.2",
     "lodash": "~4.17.15",
-    "yeoman-assert": "~3.1.1",
-    "snyk": "^1.316.1"
+    "snyk": "^1.316.2",
+    "yeoman-assert": "~3.1.1"
   },
   "devDependencies": {
     "mocha": "~6.2.2"
