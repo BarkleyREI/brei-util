@@ -4,7 +4,7 @@
   "description": "Utility functions for BarkleyREI generator repos.",
   "main": "index.js",
   "scripts": {
-    "test": "snyk test && mocha",
+    "test": "mocha",
     "snyk-protect": "snyk protect",
     "prepublish": "npm run snyk-protect"
   },
