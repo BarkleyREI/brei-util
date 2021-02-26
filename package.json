@@ -1,6 +1,6 @@
 {
   "name": "brei-util",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Utility functions for BarkleyREI generator repos.",
   "main": "index.js",
   "scripts": {
