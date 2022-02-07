@@ -1,12 +1,12 @@
 {
   "name": "brei-util",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Utility functions for BarkleyREI generator repos.",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
     "snyk-protect": "snyk protect",
-    "prepublish": "npm run snyk-protect"
+    "prepublishOnly": "npm test && npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -19,15 +19,15 @@
   },
   "homepage": "https://github.com/BarkleyREI/brei-util#readme",
   "dependencies": {
-    "deep-equal": "~2.0.3",
-    "deep-object-diff": "~1.1.0",
-    "fs": "0.0.2",
-    "lodash": "~4.17.15",
-    "snyk": "^1.379.2",
+    "deep-equal": "~2.0.5",
+    "deep-object-diff": "~1.1.7",
+    "fs": "~0.0.1-security",
+    "lodash": "~4.17.21",
+    "snyk": "^1.848.0",
     "yeoman-assert": "~3.1.1"
   },
   "devDependencies": {
-    "mocha": "~7.1.2"
+    "mocha": "~9.2.0"
   },
   "snyk": true
 }
